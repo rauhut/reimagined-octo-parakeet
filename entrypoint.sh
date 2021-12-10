@@ -1,10 +1,13 @@
 #!/bin/bash
 set -e
 
-api_url="https://pokeapi.co/api/v2/pokemon/${INPUT_POKEMON_ID}"
+# somehow get the api docs from their repo
+# send it to opslevel (should have a curl request for this?)
+
+api_url=""
 echo $api_url
 
-pokemon_name=$(curl "${api_url}" | jq ".name")
-echo $pokemon_name
+api_docs=$(curl "${api_url}" | jq ".name")
+echo $api_docs
 
-echo "::set-output name=pokemon_name::$pokemon_name"
+echo "::set-output name=api_docs::$pokemon_name"
