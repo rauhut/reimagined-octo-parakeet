@@ -1,15 +1,18 @@
-name: 'Blog Custom Github Action'
-description: 'Call an API and get the result'
+# action.yaml
+name: 'Create API docs Action'
+description: 'Adds the API docs for a service to OpsLevel'
 inputs:
-  pokemon_id:
-    description: 'number of the pokemon in the pokedex'
+  integration_url:
+    description: 'The OpsLevel deploy integration url'
     required: true
-    default: 1
+    default: ''
+  api_docs_location:
+    description: 'The path to the API docs for a service'
+    required: true
+    default: ''
 outputs:
-  pokemon_name:
-    description: 'Name des Pokemons'
+  api_docs:
+    description: 'The API docs for a service'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.pokemon_id}}
