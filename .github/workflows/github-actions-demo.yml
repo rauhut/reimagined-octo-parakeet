@@ -15,7 +15,8 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - uses: ./ # Uses an action in the root directory
+      - name: "some name"
+        uses: ./ # Uses an action in the root directory
         with:
           integration_url: 'some_id'
           api_docs_location: 'some/path'
