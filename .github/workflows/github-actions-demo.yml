@@ -15,6 +15,7 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      - uses: actions/checkout@v1
       - name: "some name"
         uses: ./ # Uses an action in the root directory
         with:
